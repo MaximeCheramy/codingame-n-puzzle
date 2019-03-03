@@ -78,7 +78,7 @@ public class Referee extends AbstractReferee {
 
 	@Override
 	public void init() {
-		List<String> testCase = gameManager.getTestCase();
+		List<String> testCase = gameManager.getTestCaseInput();
 
 		Image image = Image.valueOf(testCase.get(0));
 		grid = Stream.of(testCase.get(1).split(" ")).map(e -> Integer.valueOf(e)).collect(Collectors.toList());
@@ -112,9 +112,9 @@ public class Referee extends AbstractReferee {
 	}
 
 	private void createGrid(Image image) {
-		String[] tiles2 = graphicEntityModule.createSpriteSheetLoader().setName("image")
+		String[] tiles2 = graphicEntityModule.createSpriteSheetSplitter().setName("image")
 				.setSourceImage(image.getFilename()).setWidth(1920 / COLUMNS).setHeight(1080 / ROWS)
-				.setImageCount(ROWS * COLUMNS).setImagesPerRow(COLUMNS).setOrigCol(0).setOrigRow(0).load();
+				.setImageCount(ROWS * COLUMNS).setImagesPerRow(COLUMNS).setOrigCol(0).setOrigRow(0).split();
 
 		tiles = Stream.of(tiles2).map(i -> new Tile(i)).collect(Collectors.toList());
 		tiles.get(0).hide();
