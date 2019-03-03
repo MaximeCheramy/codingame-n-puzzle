@@ -188,7 +188,7 @@ public class Referee extends AbstractReferee {
 
 			final Coord action = player.getAction();
 			gameManager.addToGameSummary(
-					String.format("Player %s played (%d %d)", player.getNicknameToken(), action.row, action.col));
+					String.format("You played (%d %d)", player.getNicknameToken(), action.row, action.col));
 
 			if (!validActions.contains(action)) {
 				throw new InvalidAction("Invalid action.");
