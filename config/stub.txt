@@ -1,2 +1,2 @@
-loop 3 loopline 3 x:int
+loop 3 loopline 4 x:int
 write 0 0
