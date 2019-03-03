@@ -188,7 +188,7 @@ public class Referee extends AbstractReferee {
 
 			final Coord action = player.getAction();
 			gameManager.addToGameSummary(
-					String.format("You played (%d %d)", player.getNicknameToken(), action.row, action.col));
+					String.format("Played (%d %d)", action.row, action.col));
 
 			if (!validActions.contains(action)) {
 				throw new InvalidAction("Invalid action.");
@@ -205,11 +205,10 @@ public class Referee extends AbstractReferee {
 
 			validActions = getValidActions();
 		} catch (TimeoutException e) {
-			gameManager.addToGameSummary(GameManager.formatErrorMessage(player.getNicknameToken() + " timeout!"));
+			gameManager.addToGameSummary(GameManager.formatErrorMessage("Timeout!"));
 			gameManager.loseGame();
 		} catch (InvalidAction e) {
-			gameManager.addToGameSummary(
-					GameManager.formatErrorMessage(player.getNicknameToken() + " eliminated: " + e.getMessage()));
+			gameManager.addToGameSummary(GameManager.formatErrorMessage("Eliminated: " + e.getMessage()));
 			gameManager.loseGame();
 		}
 	}
