@@ -1,5 +1,61 @@
-In input your have the 3x3 grid.
+<div id="statement_back" class="statement_back" style="display:none"></div>  <div class="statement-body">
+    <!-- GOAL -->
+    <div class="statement-section statement-goal">
+      <h2>
+        <span class="icon icon-goal">&nbsp;</span>
+        <span>The Goal</span>
+      </h2>
+      <div class="statement-goal-content">
+        This is a 4 by 3 sliding puzzle with one tile missing. The objective is to place the tiles in order by making sliding moves that use the empty space.
+      </div>
+    </div>
+    <!-- RULES -->
+    <div class="statement-section statement-rules">
+      <h2>
+        <span class="icon icon-rules">&nbsp;</span>
+        <span>Rules</span>
+      </h2>
+      <div><div class="statement-rules-content"><p>You are given the initial state of the board and you must output a list of moves to rearrange the tiles.</p>
 
-Expected output:
+<div>
+<p>Each tile is numbered from 1 to 11 (0 is the empty space). The final state is the following:</p>
 
-On each line an action represented by 2 space-separated integers: row and col
+<pre>
+0  1  2  3
+4  5  6  7
+8  9 10 11
+</pre>
+
+<p>In order to make a move, you need to print the coordinate of the tile you wish to move and it will take the place of the empty space.</p>
+</div></div>
+        <!-- Victory conditions -->
+        <div class="statement-victory-conditions">
+          <div class="icon victory"></div>
+          <div class="blk">
+            <div class="title">Victory Conditions</div>
+            <div class="text">The puzzle is rearranged.</div>
+          </div>
+        </div>
+        <!-- Lose conditions -->
+        <div class="statement-lose-conditions">
+          <div class="icon lose"></div>
+          <div class="blk">
+            <div class="title">Lose Conditions</div>
+            <div class="text">Invalid move or the solution exceeds 50 moves.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- PROTOCOL -->
+    <div class="statement-section statement-protocol">
+      <h2>
+        <span class="icon icon-protocol">&nbsp;</span>
+        <span>Game Input</span>
+      </h2>
+      <!-- Protocol block -->
+      <div class="blk">  <div class="title">Input</div>          <div class="text"><span class="statement-lineno"><const>3</const> lines:</span> <const>4</const> space separated integers that represent the initial state of the puzzle.</div>
+      </div>
+      <!-- Protocol block -->
+      <div class="blk">  <div class="title">Output</div>          <div class="text"><span class="statement-lineno">For each move: </span> two space separated integers that are the ROW and the COLUMN of the tile to move.</div>
+      </div>      </div>
+</div>
